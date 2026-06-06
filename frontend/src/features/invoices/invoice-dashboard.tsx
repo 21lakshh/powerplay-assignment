@@ -149,21 +149,21 @@ export function InvoiceDashboard() {
     <>
       <PageContainer>
         {/* Header */}
-        <div className="flex items-center justify-between p-6">
+        <div className="flex items-center justify-between gap-4 p-6 max-sm:flex-col max-sm:items-stretch">
           <h1 className="text-2xl font-semibold tracking-tight text-foreground">
             Invoices
           </h1>
           <div className="flex items-center gap-3">
             <Button
               variant="outline"
-              className="h-10 rounded-xl"
+              className="h-10 flex-1 rounded-xl sm:flex-none"
               onClick={() => navigate("/invoices/summary")}
             >
               <BarChart3 className="mr-2 h-4 w-4" />
               Summary
             </Button>
             <Button
-              className="h-10 rounded-xl"
+              className="h-10 flex-1 rounded-xl sm:flex-none"
               onClick={() => {
                 setEditingInvoice(undefined);
                 setModalOpen(true);
@@ -179,7 +179,7 @@ export function InvoiceDashboard() {
         <div className="border-t border-border" />
 
         {/* Filters */}
-        <div className="flex items-center gap-3 px-6 py-5 max-lg:flex-wrap">
+        <div className="flex items-center gap-3 px-6 py-5 max-sm:flex-col max-sm:items-stretch max-lg:flex-wrap">
           <SearchBar
             value={search}
             onChange={(v) => {

@@ -155,7 +155,7 @@ export function CustomerProfile() {
           Invoice history
         </h2>
       </div>
-      <div className="mx-6 mb-6 overflow-hidden rounded-2xl border border-border">
+      <div className="mx-6 mb-6 overflow-hidden rounded-2xl border border-border max-sm:mx-4">
         <DataTable columns={historyColumns} data={invoices} />
       </div>
     </PageContainer>

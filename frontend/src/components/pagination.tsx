@@ -36,7 +36,7 @@ export function PaginationBar({
   };
 
   return (
-    <div className="flex items-center justify-between border-t border-border px-6 py-5">
+    <div className="flex items-center justify-between border-t border-border px-6 py-5 max-sm:flex-col max-sm:gap-3">
       <p className="text-sm text-muted-foreground">
         Showing {start.toLocaleString()}–{end.toLocaleString()} of{" "}
         {totalItems.toLocaleString()}
@@ -50,7 +50,7 @@ export function PaginationBar({
           onClick={() => onPageChange(currentPage - 1)}
         >
           <ChevronLeft className="h-4 w-4" />
-          Previous
+          <span className="hidden sm:inline">Previous</span>
         </Button>
         {getVisiblePages().map((page) => (
           <Button
@@ -70,7 +70,7 @@ export function PaginationBar({
           disabled={currentPage >= totalPages}
           onClick={() => onPageChange(currentPage + 1)}
         >
-          Next
+          <span className="hidden sm:inline">Next</span>
           <ChevronRight className="h-4 w-4" />
         </Button>
       </div>

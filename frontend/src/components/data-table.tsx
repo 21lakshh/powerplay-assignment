@@ -13,6 +13,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { EmptyState } from "@/components/empty-state";
+import { cn } from "@/lib/utils";
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
@@ -32,7 +33,7 @@ export function DataTable<TData, TValue>({
   });
 
   return (
-    <Table className="table-fixed">
+    <Table className="lg:table-fixed">
       <TableHeader>
         {table.getHeaderGroups().map((headerGroup) => (
           <TableRow
@@ -42,7 +43,10 @@ export function DataTable<TData, TValue>({
             {headerGroup.headers.map((header) => (
               <TableHead
                 key={header.id}
-                className="h-14 px-6 text-xs font-medium tracking-wide text-muted-foreground uppercase"
+                className={cn(
+                  "h-14 px-6 text-xs font-medium tracking-wide text-muted-foreground uppercase",
+                  (header.column.columnDef.meta as Record<string, string>)?.className
+                )}
               >
                 {header.isPlaceholder
                   ? null
@@ -60,11 +64,17 @@ export function DataTable<TData, TValue>({
           table.getRowModel().rows.map((row) => (
             <TableRow
               key={row.id}
-              className={`h-[72px] w-[180px] border-b border-border ${onRowClick ? "cursor-pointer" : ""}`}
+              className={`h-[72px] border-b border-border ${onRowClick ? "cursor-pointer" : ""}`}
               onClick={() => onRowClick?.(row.original)}
             >
               {row.getVisibleCells().map((cell) => (
-                <TableCell key={cell.id} className="px-6">
+                <TableCell
+                  key={cell.id}
+                  className={cn(
+                    "px-6",
+                    (cell.column.columnDef.meta as Record<string, string>)?.className
+                  )}
+                >
                   {flexRender(cell.column.columnDef.cell, cell.getContext())}
                 </TableCell>
               ))}

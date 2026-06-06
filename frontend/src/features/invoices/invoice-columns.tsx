@@ -88,6 +88,7 @@ export function getInvoiceColumns({
     },
     {
       accessorKey: "amount",
+      meta: { className: "hidden lg:table-cell" },
       header: () => (
         <SortableHeader label="Amount" field="amount" sort={sort} onSort={onSort} />
       ),
@@ -99,6 +100,7 @@ export function getInvoiceColumns({
     },
     {
       accessorKey: "taxRate",
+      meta: { className: "hidden xl:table-cell" },
       header: "Tax %",
       cell: ({ row }) => (
         <span className="text-muted-foreground">{row.original.taxRate}%</span>
@@ -117,6 +119,7 @@ export function getInvoiceColumns({
     },
     {
       accessorKey: "issueDate",
+      meta: { className: "hidden md:table-cell" },
       header: () => (
         <SortableHeader label="Issue Date" field="issueDate" sort={sort} onSort={onSort} />
       ),
@@ -132,6 +135,7 @@ export function getInvoiceColumns({
     },
     {
       accessorKey: "dueDate",
+      meta: { className: "hidden lg:table-cell" },
       header: () => (
         <SortableHeader label="Due Date" field="dueDate" sort={sort} onSort={onSort} />
       ),

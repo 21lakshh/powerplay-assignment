@@ -159,7 +159,7 @@ export function InvoiceModal({
         onOpenChange(v);
       }}
     >
-      <DialogContent className="max-w-[800px] rounded-2xl p-8 max-sm:max-w-[90vw]">
+      <DialogContent className="max-w-[800px] rounded-2xl p-8 max-sm:max-w-[95vw] max-sm:p-5">
         <DialogHeader>
           <DialogTitle className="text-xl font-semibold">
             {isEdit ? "Edit Invoice" : "New Invoice"}
@@ -208,7 +208,7 @@ export function InvoiceModal({
           </div>
 
           {/* Amount + Tax Rate */}
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-2 gap-4 max-sm:grid-cols-1">
             <div className="space-y-2">
               <Label className="text-sm font-medium text-muted-foreground">
                 Amount
@@ -249,7 +249,7 @@ export function InvoiceModal({
           </div>
 
           {/* Issue Date + Due Date */}
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-2 gap-4 max-sm:grid-cols-1">
             <div className="space-y-2">
               <Label className="text-sm font-medium text-muted-foreground">
                 Issue date
@@ -354,7 +354,7 @@ export function InvoiceModalSkeleton() {
           <Skeleton className="h-4 w-20" />
           <Skeleton className="h-12 w-full rounded-xl" />
         </div>
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-2 gap-4 max-sm:grid-cols-1">
           <div className="space-y-2">
             <Skeleton className="h-4 w-16" />
             <Skeleton className="h-12 w-full rounded-xl" />
@@ -364,7 +364,7 @@ export function InvoiceModalSkeleton() {
             <Skeleton className="h-12 w-full rounded-xl" />
           </div>
         </div>
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-2 gap-4 max-sm:grid-cols-1">
           <div className="space-y-2">
             <Skeleton className="h-4 w-20" />
             <Skeleton className="h-12 w-full rounded-xl" />

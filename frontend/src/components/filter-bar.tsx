@@ -26,9 +26,9 @@ export function FilterBar({
   onDateChange,
 }: FilterBarProps) {
   return (
-    <div className="flex items-center gap-3">
+    <div className="flex flex-wrap items-center gap-3">
       <Select value={statusFilter} onValueChange={onStatusChange}>
-        <SelectTrigger className="h-11 w-[180px] rounded-xl border-border bg-white dark:bg-card">
+        <SelectTrigger className="h-11 w-full rounded-xl border-border bg-white sm:w-45 dark:bg-card">
           <SelectValue placeholder="Status" />
         </SelectTrigger>
         <SelectContent>
@@ -42,7 +42,7 @@ export function FilterBar({
       </Select>
 
       <Select value={taxFilter} onValueChange={onTaxChange}>
-        <SelectTrigger className="h-11 w-[180px] rounded-xl border-border bg-white dark:bg-card">
+        <SelectTrigger className="h-11 w-full sm:w-45 rounded-xl border-border bg-white dark:bg-card">
           <SelectValue placeholder="Tax rate" />
         </SelectTrigger>
         <SelectContent>
@@ -56,7 +56,7 @@ export function FilterBar({
       </Select>
 
       <Select value={dateFilter} onValueChange={onDateChange}>
-        <SelectTrigger className="h-11 w-[180px] rounded-xl border-border bg-white dark:bg-card">
+        <SelectTrigger className="h-11 w-full sm:w-45 rounded-xl border-border bg-white dark:bg-card">
           <SelectValue placeholder="Date" />
         </SelectTrigger>
         <SelectContent>

@@ -7,7 +7,7 @@ interface PageContainerProps {
 
 export function PageContainer({ children, className }: PageContainerProps) {
   return (
-    <div className="mx-auto w-full max-w-[1440px] px-6 py-6 max-md:px-4">
+    <div className="mx-auto w-full max-w-[1440px] px-6 py-6 max-md:px-4 max-sm:px-3 max-sm:py-4">
       <div
         className={cn(
           "rounded-2xl border border-border bg-white dark:bg-card",

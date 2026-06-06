@@ -257,8 +257,8 @@ export function SummaryPage() {
           {data.topCustomers.map((customer) => {
             const pct = (customer.revenue / maxRevenue) * 100;
             return (
-              <div key={customer.name} className="flex items-center gap-4">
-                <div className="w-[240px] shrink-0 max-sm:w-[140px]">
+              <div key={customer.name} className="flex items-center gap-4 max-sm:flex-col max-sm:items-stretch max-sm:gap-2">
+                <div className="w-60 shrink-0 max-sm:w-full">
                   <p className="truncate text-sm font-medium text-foreground">
                     {customer.name}
                   </p>
@@ -266,7 +266,7 @@ export function SummaryPage() {
                     {customer.company}
                   </p>
                 </div>
-                <div className="flex-1">
+                <div className="flex-1 max-sm:w-full">
                   <div className="flex items-center gap-3">
                     <div className="h-8 flex-1 rounded-full bg-neutral-100 dark:bg-muted">
                       <div
